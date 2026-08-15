@@ -1,171 +1,232 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    tools:context=".RegistrationActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="24dp">
+        android:padding="20dp">
 
-        <!-- Back Button -->
-        <ImageButton
-            android:id="@+id/btnBack"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Back"
-            android:src="@drawable/ic_arrow_back"
-            app:tint="#FFFFFF" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <!-- Header Titles -->
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_gravity="start|center_vertical"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Back"
+                android:src="@drawable/ic_arrow_back"
+                app:tint="#FFFFFF" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:id="@+id/imgAppLogo"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/finalapplogo"
+                android:layout_marginBottom="-10dp"/>
+
+            <TextView
+                android:id="@+id/tvAppName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MediSafe"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvSlogan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Your health. Our Priority"
+                android:textColor="#99E8B4"
+                android:textSize="12sp"
+                android:textStyle="italic" />
+        </LinearLayout>
+
         <TextView
             android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
             android:text="Create Account"
             android:textColor="#99E8B4"
-            android:textSize="28sp"
+            android:textSize="26sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvSubtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:text="Join HealthConnect today"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="16dp"
+            android:text="Join MediSafe today"
             android:textColor="#A0A0A0"
-            android:textSize="14sp" />
+            android:textSize="13sp" />
 
-        <!-- Profile Avatar Container -->
-        <FrameLayout
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="24dp">
-
-            <ImageView
-                android:id="@+id/imgProfile"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/bg_circle_avatar"
-                android:padding="24dp"
-                android:src="@drawable/ic_person"
-                app:tint="#FFFFFF" />
-
-            <ImageView
-                android:id="@+id/btnCamera"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:layout_gravity="bottom|end"
-                android:background="@drawable/bg_circle_icon"
-                android:padding="5dp"
-                android:src="@drawable/ic_camera"
-                app:tint="#FFFFFF" />
-        </FrameLayout>
-
-        <!-- Full Name Input -->
-        <EditText
+        <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/etFullName"
             android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:layout_marginBottom="12dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/bg_input_field"
             android:drawableStart="@drawable/ic_person"
             android:drawablePadding="12dp"
             android:hint="Full Name"
             android:inputType="textPersonName"
-            android:paddingHorizontal="16dp"
+            android:paddingHorizontal="14dp"
             android:textColor="#FFFFFF"
             android:textColorHint="#6C757D"
-            android:textSize="14sp" />
+            android:textSize="13sp"
+            app:drawableTint="#6C757D" />
 
-        <!-- Email Address Input -->
-        <EditText
+        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+            android:id="@+id/actvRole"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bg_input_field"
+            android:drawableStart="@drawable/ic_business"
+            android:drawableEnd="@drawable/ic_arrow_drop_down"
+            android:drawablePadding="12dp"
+            android:hint="Select Account Type"
+            android:inputType="none"
+            android:focusable="false"
+            android:clickable="true"
+            android:paddingHorizontal="14dp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#6C757D"
+            android:textSize="13sp"
+            app:drawableTint="#6C757D" />
+
+        <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/etEmail"
             android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:layout_marginBottom="12dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/bg_input_field"
-            android:drawableStart="@drawable/ic_email"
+            android:drawableStart="@drawable/ic_emai"
             android:drawablePadding="12dp"
             android:hint="Email Address"
             android:inputType="textEmailAddress"
-            android:paddingHorizontal="16dp"
+            android:paddingHorizontal="14dp"
             android:textColor="#FFFFFF"
             android:textColorHint="#6C757D"
-            android:textSize="14sp" />
+            android:textSize="13sp"
+            app:drawableTint="#6C757D" />
 
-        <!-- Phone Number Input -->
-        <EditText
+        <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/etPhone"
             android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:layout_marginBottom="12dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/bg_input_field"
             android:drawableStart="@drawable/ic_phone"
             android:drawablePadding="12dp"
             android:hint="Phone Number"
             android:inputType="phone"
-            android:paddingHorizontal="16dp"
+            android:paddingHorizontal="14dp"
             android:textColor="#FFFFFF"
             android:textColorHint="#6C757D"
-            android:textSize="14sp" />
+            android:textSize="13sp"
+            app:drawableTint="#6C757D" />
 
-        <!-- Password Input -->
-        <EditText
-            android:id="@+id/etPassword"
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etUsername"
             android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:layout_marginBottom="12dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/bg_input_field"
-            android:drawableStart="@drawable/ic_lock"
-            android:drawableEnd="@drawable/ic_eye_visibility"
+            android:drawableStart="@drawable/ic_account_circle"
             android:drawablePadding="12dp"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:paddingHorizontal="16dp"
+            android:hint="Username"
+            android:inputType="text"
+            android:paddingHorizontal="14dp"
             android:textColor="#FFFFFF"
             android:textColorHint="#6C757D"
-            android:textSize="14sp" />
+            android:textSize="13sp"
+            app:drawableTint="#6C757D" />
 
-        <!-- Confirm Password Input -->
-        <EditText
-            android:id="@+id/etConfirmPassword"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/bg_input_field"
-            android:drawableStart="@drawable/ic_lock"
-            android:drawableEnd="@drawable/ic_eye_visibility"
-            android:drawablePadding="12dp"
-            android:hint="Confirm Password"
-            android:inputType="textPassword"
-            android:paddingHorizontal="16dp"
-            android:textColor="#FFFFFF"
-            android:textColorHint="#6C757D"
-            android:textSize="14sp" />
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            app:hintEnabled="false"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="#6C757D">
 
-        <!-- Checkbox & Terms -->
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_input_field"
+                android:drawableStart="@drawable/ic_lock"
+                android:drawablePadding="12dp"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:paddingHorizontal="14dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#6C757D"
+                android:textSize="13sp"
+                app:drawableTint="#6C757D" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            app:hintEnabled="false"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="#6C757D">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etConfirmPassword"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_input_field"
+                android:drawableStart="@drawable/ic_lock"
+                android:drawablePadding="12dp"
+                android:hint="Confirm Password"
+                android:inputType="textPassword"
+                android:paddingHorizontal="14dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#6C757D"
+                android:textSize="13sp"
+                app:drawableTint="#6C757D" />
+        </com.google.android.material.textfield.TextInputLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
+            android:layout_marginBottom="18dp"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
-            <CheckBox
+            <androidx.appcompat.widget.AppCompatCheckBox
                 android:id="@+id/cbTerms"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:buttonTint="#99E8B4" />
+                app:buttonTint="#99E8B4" />
 
             <TextView
                 android:id="@+id/tvTerms"
@@ -176,30 +237,28 @@
                 android:textSize="12sp" />
         </LinearLayout>
 
-        <!-- Register Button -->
         <Button
             android:id="@+id/btnRegister"
             android:layout_width="match_parent"
-            android:layout_height="52dp"
+            android:layout_height="48dp"
             android:backgroundTint="#99E8B4"
             android:text="Register"
             android:textAllCaps="false"
             android:textColor="#000000"
-            android:textSize="16sp"
+            android:textSize="15sp"
             android:textStyle="bold"
-            app:cornerRadius="12dp" />
+            app:cornerRadius="10dp" />
 
-        <!-- Login Redirect Link -->
         <TextView
             android:id="@+id/tvLoginRedirect"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="12dp"
             android:text="Already have an account? Login"
             android:textColor="#A0A0A0"
-            android:textSize="14sp" />
+            android:textSize="13sp" />
 
     </LinearLayout>
 </ScrollView>
